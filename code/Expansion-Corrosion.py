@@ -24,7 +24,7 @@ def imgCorrode(img):
     :param img: numpy数组 二值图图像
     :return: 二值图像
     '''
-    #膨胀算子,大小为奇数维度
+    #腐蚀算子,大小为奇数维度
     #filter = np.array([[0,255,0],[255,255,255],[0,255,0]])
     filter = np.array([[255, 255, 255], [255, 255, 255], [255, 255, 255]])
     filter_w,filter_h = filter.shape
