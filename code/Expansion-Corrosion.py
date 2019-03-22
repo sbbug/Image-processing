@@ -39,8 +39,6 @@ def imgCorrode(img):
 
     return new_img
 
-
-
 #图像膨胀算法
 def imgExpand(img):
     '''
