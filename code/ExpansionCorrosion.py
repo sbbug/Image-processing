@@ -18,7 +18,7 @@ def getBinaryImg(img_path):
     return thresh
 
 #图像腐蚀算法
-def imgCorrode(img):
+def imgCorrode(img,filter_w, filter_h):
 
     '''
     :param img: numpy数组 二值图图像
@@ -26,8 +26,11 @@ def imgCorrode(img):
     '''
     #腐蚀算子,大小为奇数维度
     #filter = np.array([[0,255,0],[255,255,255],[0,255,0]])
-    filter = np.array([[255, 255, 255], [255, 255, 255], [255, 255, 255]])
-    filter_w,filter_h = filter.shape
+    filter = np.empty((filter_w,filter_h))
+    for i in range(filter_w):
+        for j in range(filter_h):
+            filter[i][j] = np.int32(255)
+
     new_img = img.copy()
 
     for i in range(int(filter_w/2),len(img)+1-filter_w):
@@ -40,15 +43,18 @@ def imgCorrode(img):
     return new_img
 
 #图像膨胀算法
-def imgExpand(img):
+def imgExpand(img,filter_w, filter_h):
     '''
     :param img:
     :return:
     '''
     # 膨胀算子,大小为奇数维度
     # filter = np.array([[0,255,0],[255,255,255],[0,255,0]])
-    filter = np.array([[255, 255, 255], [255, 255, 255], [255, 255, 255]])
-    filter_w, filter_h = filter.shape
+    filter = np.empty((filter_w, filter_h))
+    for i in range(filter_w):
+        for j in range(filter_h):
+            filter[i][j] = np.int32(255)
+
     new_img = img.copy()
 
     for i in range(int(filter_w / 2), len(img) + 1 - filter_w):
