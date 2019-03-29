@@ -16,28 +16,29 @@ def imgConvoluting(image,filter):
 
 a = cv.imread("../images/5.png")
 b = cv.imread("../images/Y.jpg")
-a = a.astype(int)
-b = b.astype(int)
-#c= cv.subtract(a,b)
-c = np.abs(np.subtract(a,b))
-r,_,_ = cv.split(a)
-for i in range(len(r)):
-    for j in range(len(r[i])):
-        print(r[i][j],end=" ")
-    print("")
-print("=====================")
-r,_,_ = cv.split(b)
-for i in range(len(r)):
-    for j in range(len(r[i])):
-        print(r[i][j],end=" ")
-    print("")
-
-print("=====================")
-r,_,_ = cv.split(c)
-for i in range(len(r)):
-    for j in range(len(r[i])):
-        print(r[i][j],end=" ")
-    print("")
+print(a.size(0))
+# a = a.astype(int)
+# b = b.astype(int)
+# #c= cv.subtract(a,b)
+# c = np.abs(np.subtract(a,b))
+# r,_,_ = cv.split(a)
+# for i in range(len(r)):
+#     for j in range(len(r[i])):
+#         print(r[i][j],end=" ")
+#     print("")
+# print("=====================")
+# r,_,_ = cv.split(b)
+# for i in range(len(r)):
+#     for j in range(len(r[i])):
+#         print(r[i][j],end=" ")
+#     print("")
+#
+# print("=====================")
+# r,_,_ = cv.split(c)
+# for i in range(len(r)):
+#     for j in range(len(r[i])):
+#         print(r[i][j],end=" ")
+#     print("")
 
 
 
