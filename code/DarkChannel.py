@@ -54,7 +54,7 @@ def deHaze(m, r=81, eps=0.001, w=0.95, maxV1=0.80, bGamma=False):
 
 
 if __name__ == '__main__':
-    raw = cv2.imread('../images/W.png')
+    raw = cv2.imread('../images/meterReader/contact6.png')
     m = deHaze( raw / 255.0) * 255
     cv2.imwrite('ww.png', m)
 

@@ -12,9 +12,10 @@ def getBinaryImg(file_path):
     raw_img = cv.imread(file_path)
     gray_img = cv.cvtColor(raw_img, cv.COLOR_BGR2GRAY)
     ret, thresh = cv.threshold(gray_img, 100, 255, cv.THRESH_BINARY)
+
     res = EC.imgCorrode(thresh,6,6)
     res = EC.imgExpand(res,6,6)
-    return res
+    return res,thresh
 
 #将图像进行投影压缩
 def getSplitLocation(img_bin,thre):
@@ -62,7 +63,7 @@ def getSplitLocation(img_bin,thre):
 if __name__ =="__main__":
 
     raw = cv.imread("../images/numbers.png")
-    img_bin = getBinaryImg("../images/numbers.png")
+    img_bin,r = getBinaryImg("../images/numbers.png")
     img_h,img_w = img_bin.shape
     split_locations = getSplitLocation(img_bin,20)
     print(split_locations)
@@ -74,8 +75,9 @@ if __name__ =="__main__":
         # #img_bin[0:point[1]-point[0],point[0]:img_h]
         data = img_bin[0:img_h,point[0]:point[1]]
         # print(data.shape)
-        data = cv.resize(data,(40,40))
+       # data = cv.resize(data,(40,40))
         cv.imwrite(str(i)+".jpg",data)
+    cv.imshow("raw", r)
     cv.imshow("bin",img_bin)
     cv.imshow("res", raw)
     # for i in range(len(img_bin)):
