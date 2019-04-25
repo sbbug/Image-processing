@@ -1,3 +1,7 @@
+'''
+使用hog提取图像特征 基于knn实现分类
+'''
+
 import cv2
 import matplotlib.pyplot as plt
 from skimage.feature import hog
