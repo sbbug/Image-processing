@@ -40,6 +40,7 @@ def loadData(data_path):
     return data.astype(np.float32),data_labels.astype(np.float32)
 # 开始进行数据降维处理
 def reduceDim(data_mat):
+    
     pass
 
 
