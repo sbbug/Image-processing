@@ -4,6 +4,8 @@
 code/imageClassification/images/
 code/imageClassification/knn-Hog/test.py
 code/imageClassification/knn-Hog/test2.py
+code/imageClassification/knn-Hog/test3.py
+code/imageClassification/knn-Hog/tool.py
 Test/*
 Resources/Log/*
 # Byte-compiled / optimized / DLL files
